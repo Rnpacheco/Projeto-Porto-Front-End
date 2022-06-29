@@ -1,0 +1,86 @@
+<section class="container" *ngIf = "isLogado(); else naologado">
+    <form class="d-flex flex-column align-items-center">
+    <h3 class="text-center">Atualizar usuário</h3>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">E-mail (login)</label>
+      <input type="email" class="form-control" name="email" placeholder="Digite seu email" [(ngModel)]="usuario.username"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" placeholder="Digite seu nome" [(ngModel)]="usuario.nome"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">CPF</label>
+      <input type="text" class="form-control" name="CPF"  placeholder="Digite seu CPF" [(ngModel)]="usuario.cpf" />
+    </div>
+
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">Celular</label>
+      <input type="text" class="form-control" name="celular"  placeholder="Digite seu celular"[(ngModel)]="usuario.celular"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">CEP</label>
+      <input type="text" class="form-control" name="cep" #cep (blur)="buscarEndereco(cep)" placeholder="Digite seu CEP"  [(ngModel)]="usuario.cep"/>
+    </div>
+
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">Endereço</label>
+      <input type="text" class="form-control" name="endereço"  placeholder="Digite seu endereço" [(ngModel)]="usuario.endereco"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">Número</label>
+      <input type="text" class="form-control" name="numero" [(ngModel)]="usuario.numero"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">Complemento</label>
+      <input type="text" class="form-control" name="complemento" [(ngModel)]="usuario.complemento"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">Bairro</label>
+      <input type="text" class="form-control" name="bairro" placeholder="Digite seu bairro" [(ngModel)]="usuario.bairro"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label">Cidade</label>
+      <input type="text" class="form-control" name="cidade" placeholder="Digite sua cidade"  [(ngModel)]="usuario.cidade"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label for="estado">Estado</label>
+      <select class="form-select" name="estado" [(ngModel)]="usuario.estado">
+        <option selected>Selecione um estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+        <option value="DF">Distrito Federal</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-dark" (click)="atualizarPessoa()">Atualizar</button>
+  </form>
+</section>
+
+<ng-template #naologado>
+<h3>Por favor,faça seu <a routerLink="/login">login</a></h3>
+</ng-template>

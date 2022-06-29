@@ -1,0 +1,49 @@
+<section class="container" *ngIf="isAdmin(); else naoadmin" >
+  <img src="../../assets/img/logo-sem-fundo.png" class="rounded mx-auto d-block w-25
+    " alt="...">
+  <form class="d-flex flex-column align-items-center" (ngSubmit)="atualizarProduto(produto)">
+    <h1 class="display-9 text-center border-personalizada">Cadastrar produto</h1>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" [(ngModel)] = "produto.nomeProduto"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="precoVenda">Preço de Venda</label>
+      <input type="number" class="form-control" name="precoVenda" [(ngModel)] = "produto.precoVendaProduto"/>
+    </div>
+
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="descricaoProduto">Descrição Produto</label>
+      <input type="text" class="form-control" name="descricaoProduto" [(ngModel)] = "produto.descricaoProduto"/>
+    </div>
+
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="estoque">Estoque de Produto</label>
+      <input type="number" class="form-control" name="estoque" [(ngModel)] = "produto.qtdeEstoqueProduto"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="urlFoto">Url Foto</label>
+      <input type="text" class="form-control" name="urlFoto" [(ngModel)] = "produto.urlFotoProduto"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="categoriaProduto">Categoria Produto</label>
+      <select class="form-select" name="categoriaProduto" [(ngModel)] = "produto.categoriaProduto">
+        <option selected>Selecione uma categoria</option>
+        <option value="Celulares">Celulares</option>
+        <option value="Notebooks">Notebooks</option>
+        <option value="Fones de Ouvido">Fones de Ouvido</option>
+        <option value="Smartwatches">Smartwatches</option>
+        </select>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label" for="marcaProduto">Marca Produto</label>
+      <input type="text" class="form-control" name="marcaProduto" [(ngModel)] = "produto.marcaProduto"/>
+    </div>
+    <button type="submit" class="btn btn-dark">Atualizar Produto</button>
+  </form>
+</section>
+<ng-template #naoadmin>
+  <div class="container">
+    <h2>Você não é um administrador</h2>
+  </div>
+</ng-template>

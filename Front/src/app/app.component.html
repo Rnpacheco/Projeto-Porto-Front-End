@@ -1,0 +1,24 @@
+<!--
+  <div *ngIf = "environmentComponent.exibirMenuRodape else loginCadastro">
+  </div>
+  <ng-template #loginCadastro>
+    <router-outlet></router-outlet>
+  </ng-template>
+  <div *ngIf="environmentComponent.isAdmin else rotaCliente">
+  <app-gerenciar-produtos></app-gerenciar-produtos>
+</div>
+<ng-template #rotaCliente>
+  <app-cabecalho></app-cabecalho>
+  <app-menu></app-menu>
+  <router-outlet></router-outlet>
+  <app-rodape></app-rodape>F
+-->
+<div *ngIf="environmentAppComponent.token ==''; else exibirNome">
+  <app-cabecalho></app-cabecalho>
+</div>
+<ng-template #exibirNome>
+  <app-cabecalho></app-cabecalho>
+</ng-template>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<app-rodape></app-rodape>

@@ -1,0 +1,10 @@
+.btn{
+    background-color: #103574;
+    color: white;
+}
+.estoqueSim{
+  color:rgb(137, 228, 0);
+}
+.estoqueNao{
+  color:#f50a0a;
+}

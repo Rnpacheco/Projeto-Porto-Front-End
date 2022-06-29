@@ -1,0 +1,72 @@
+
+#carouselExampleIndicators{
+margin-bottom: 10px;
+
+}
+.imgCarr{
+height: 100% !important;
+width: 100% !important;
+
+}
+/* .carousel-inner{
+padding: 10px;
+margin: 10px;
+
+} */
+
+.btn{
+    align-items: center;
+    justify-content: center;
+    color: #ffffff ;
+    background-color: #103574;
+    border-bottom: #103574;
+  }
+
+  .imgCard{
+   padding: 1.5rem;
+
+  }
+
+  .preco{
+    margin: 18px 0;
+    font-size: 20px;
+    color: #0AA1DD;
+    text-align: center;
+  }
+
+  .textDescription{
+    text-align: left;
+    padding: 5px;
+  }
+
+  /* .precoPromocao{
+    color: red;
+    margin-bottom: 16px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .promocao{
+    text-align: center;
+    color: rgb(235, 31, 31);
+    margin: 10px;
+  } */
+/* 
+  #carouselExampleIndicators{
+    height: 500px;
+    max-height: 100%;
+    justify-content: space-between;} */
+  
+  
+.cardStyle{
+  margin-bottom: 25px;
+  
+}
+
+
+
+
+ a{
+  text-decoration: none;
+  color: #000000;
+ }

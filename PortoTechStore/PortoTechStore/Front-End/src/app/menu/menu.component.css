@@ -1,0 +1,52 @@
+
+nav{
+    padding: 10px;
+    background-color: #ffffff;
+    /* padding: 0px !important; */
+    
+}
+.botaoHover:hover{
+    background-color: #0aa1dd;
+    color: #ffffff !important;
+    transition: 0.3s ease-in-out;
+    
+    
+}
+.navbar{
+margin: 0px;
+background-color: #f0f8ff;
+
+}
+
+.dropdown-menu{
+    flex-wrap: wrap;
+  
+
+}
+
+
+
+
+@media (max-width:1199px) {
+    .displayItens1{
+        display: none;
+    }
+   /*  .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    } */
+  }
+  
+  
+  @media(max-width: 991px) {
+    .displayItens2{
+        display: none;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto !important;
+    }
+  }

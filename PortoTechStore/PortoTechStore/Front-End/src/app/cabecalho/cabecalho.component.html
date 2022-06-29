@@ -1,0 +1,84 @@
+<header class="container-fluid">
+
+  <div class="cabecalho">
+    <div class="container ">
+
+
+    
+    <a routerLink="" class="logo">
+      <img src="../../assets/img/logo-horizontal.png" alt="Logo PortoTech Store" width="150" height="45">
+    </a>
+
+    <form class="busca">
+      <fieldset class="d-flex flex-wrap">
+        <input class="inputText" type="text" placeholder="Pesquise aqui seu produto" [(ngModel)]="buscarNome">
+        <input class="inputButton" type="button" [routerLink]="['/busca/nome/',buscarNome]">
+      </fieldset>
+    </form>
+
+    <div *ngIf="isAdmin(); else naoadm">
+      <nav>
+        <ul>
+          <li class="userImg flex-wrap adminLi">
+            <a routerLink="gerenciadorprodutos">
+              Gerenciar Produtos
+            </a>
+          </li>
+          <li class="userImg flex-wrap adminLi">
+            <a routerLink="cadastroproduto">
+              Cadastrar Produtos
+            </a>
+          </li>
+          <li class="carrinhoImg">
+            <a (click)="sair()" routerLink="">
+              <img src="../../assets/img/sair.png" alt="sair">
+              Sair
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <ng-template #naoadm>
+
+      <nav >
+        <ul class="listaStyle">
+          <li class="userImg flex-wrap" *ngIf="isNotLogado(); else logado">
+            <a routerLink="login">
+              <img src="../../assets/img/userlogin.png" alt="login">
+              Entre/Cadastre-se
+            </a>
+          </li>
+          <ng-template #logado>
+            <li class="userImg">
+              <a [routerLink]="['/usuario/editar',idUsuario]">
+                <img src="../../assets/img/userlogin.png" alt="login">
+                <small>{{nome}}</small>
+              </a>
+            </li>
+
+            <li class="carrinhoImg">
+              <a (click)="sair()" routerLink="">
+                <img src="../../assets/img/sair.png" alt="sair">
+                Sair
+              </a>
+            </li>
+          </ng-template>
+
+          <li class="carrinhoImg">
+            <a routerLink="carrinho">
+              <img src="../../assets/img/carrinho-de-compras.png" alt="carrinho de compras">
+              Meu carrinho
+              <span>{{tamanhoCarrinho}}</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </ng-template>
+
+  </div>
+
+  </div>
+
+
+</header>

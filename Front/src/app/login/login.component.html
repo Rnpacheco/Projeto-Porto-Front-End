@@ -1,0 +1,24 @@
+<section class="container text" *ngIf="!isLogado(); else logado">
+  <div class="logo">
+  <img src="../../assets/img/Logo PortoTech.png" class="rounded mx-auto d-block w-25"  alt="logo">
+</div>
+  <h1 class="bemVindo">Bem-vindo</h1>
+  <h2 class="text-center fs-5">PortoTech Store: A mais nova loja de produtos tecnológicos</h2>
+  <form class="d-flex flex-column align-items-center">
+   <div class="mb-3 form-group w-50">
+      <label class="form-label mt-5">Usuário</label>
+      <input placeholder="Digite seu usuário" type="text" class="form-control" name = "usuario" [(ngModel)]="userLogin.username"/>
+    </div>
+    <div class="mb-3 form-group w-50">
+      <label class="form-label mt-2">Senha</label>
+      <input placeholder="Digite sua senha" type="password" class="form-control" name ="senha" [(ngModel)] = "userLogin.password"/>
+    </div>
+    <button type="submit" class="btn btn mt-3 fs-5" (click) = "entrar()">Entrar</button>
+  </form>
+  <p class="text-center mt-3 fs-5">
+      Não tem uma conta? <a routerLink='/cadastrarusuario'>Cadastre-se</a>
+    </p>
+</section>
+<ng-template #logado>
+  <h3>Você já está logado saia se quiser trocar de conta</h3>
+</ng-template>
